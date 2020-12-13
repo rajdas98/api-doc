@@ -21,6 +21,7 @@
         <nav id="nav" role="navigation">
           <h5>Topics</h5>
           <a href="#introduction">Introduction</a>
+          <a href="#authentication">Authentication</a>
           <h5>Operations</h5>
           <section>
             <a href="#tag-Cluster">Cluster</a>
@@ -37,7 +38,7 @@
             </ul>
           </section>
           <section>
-            <a href="#tag-Chaos-Workflow">Chaos Workflow</a>
+            <a href="#tag-ChaosWorkflow">ChaosWorkflow</a>
             <ul>
               <li>
                 <a href="#operation-create_chaosworkflow-post"> Create ChaosWorkflow </a>
@@ -184,6 +185,44 @@ http://localhost:8080/query
               </div>
             </div>
           </div>
+          <h1 id="authentication" data-traverse-target="authentication">Authentication</h1>
+          <div class="tag-description doc-row">
+            <div class="doc-copy">
+              <p>Litmus Portal APIs can be accessed using a JWT token. Set that token in the headers before calling the endpoint. </p>
+            </div>
+          </div>
+          <div id="security-definition-api_key" class="panel">
+            <div class="doc-row">
+              <div class="doc-copy">
+                <h3 class="security-definition-title">
+                  <span class="security-name">API KEYS</span>
+                  <span class="swagger-security-definition-apiKey"></span>
+                </h3>
+                <section class="swagger-security-definition-properties">
+                  <div class="prop-row security-definition-property">
+                    <div class="prop-name">
+                      <div class="prop-title security-definition-property-name">name</div>
+                    </div>
+                    <div class="prop-value security-definition-property-type"> Authorization </div>
+                  </div>
+                  <div class="prop-row security-definition-property">
+                    <div class="prop-name">
+                      <div class="prop-title security-definition-property-name">in</div>
+                    </div>
+                    <div class="prop-value security-definition-property-type"> header </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Request to generate API KEYS</h5>
+                  <pre><code>curl -H 'Content-Type: application/json' -X POST --data '{"username": "admin", "password": "litmus"}'  http://localhost:3000/login </code></pre>
+                  
+                </section>
+              </div>
+            </div>
+          </div>
+
           <h1 id="tag-Cluster" class="swagger-summary-tag" data-traverse-target="tag-Cluster">Cluster</h1>
           <div class="tag-description doc-row">
             <div class="doc-copy">
@@ -591,7 +630,7 @@ http://localhost:8080/query
               </div>
             </div>
           </div>
-          <h1 id="tag-Chaos-Workflow" class="swagger-summary-tag" data-traverse-target="tag-Chaos-Workflow">Chaos Workflow</h1>
+          <h1 id="tag-ChaosWorkflow" class="swagger-summary-tag" data-traverse-target="tag-ChaosWorkflow">ChaosWorkflow</h1>
           <div class="tag-description doc-row">
             <div class="doc-copy">
               <p>Chaos workflows consist of a sequence of experiments run together to introduce chaos in the Kubernetes platform.</p>
@@ -601,7 +640,7 @@ http://localhost:8080/query
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-Chaos-Workflow">Chaos Workflow</a>
+              <a class="label" href="#tag-ChaosWorkflow">ChaosWorkflow</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -740,7 +779,7 @@ http://localhost:8080/query
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-Chaos-Workflow">Chaos Workflow</a>
+              <a class="label" href="#tag-ChaosWorkflow">ChaosWorkflow</a>
               <!---->
             </div>
             <!-- </div> -->
@@ -894,7 +933,7 @@ http://localhost:8080/query
             <!-- <section class="operation-tags row"> -->
             <!-- <div class="doc-copy"> -->
             <div class="operation-tags">
-              <a class="label" href="#tag-Chaos-Workflow">Chaos Workflow</a>
+              <a class="label" href="#tag-ChaosWorkflow">ChaosWorkflow</a>
               <!---->
             </div>
             <!-- </div> -->
