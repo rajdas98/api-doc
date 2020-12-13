@@ -1,0 +1,72 @@
+introspection: http://localhost:8080/query
+
+servers:
+  - url: http://localhost:8080
+    description: Dev
+  - url: http://localhost:8080/query
+    description: Prod
+
+info:
+    title: Litmus Portal API Documentation
+    description: Litmus-Portal provides console and UI experience for managing, monitoring, and events around chaos workflows. Chaos workflows consist of a sequence of experiments run together to achieve the objective of introducing some kind of fault into an application or the Kubernetes platform.    
+
+domains:
+  - name: Cluster
+    description: LitmusPortal gives the ability to run chaos on remote Kubernetes cluster. Following are the API's for cluster operations.
+    usecases:      
+    - name: Register Cluster
+      query: mutation.userClusterReg
+    - name: List Cluster
+      query: query.getCluster
+    - name: Delete Cluster
+      query: mutation.deleteClusterReg
+
+  - name: Chaos Workflow
+    description: Chaos workflows consist of a sequence of experiments run together to introduce chaos in the Kubernetes platform.
+    usecases:      
+    - name: Create ChaosWorkflow
+      query: mutation.createChaosWorkFlow
+    - name: List ChaosWorkflow
+      query: query.ListWorkflow
+    - name: Update ChaosWorkflow
+      query: mutation.updateChaosWorkflow
+    - name: Delete ChaosWorkflow
+      query: mutation.deleteChaosWorkflow
+
+  - name: MyHub
+    description: MyHub constructs workflow from a set of experiments from ChaosHub or the Git Repo.
+    usecases:      
+    - name: Add Myhub
+      query: mutation.addMyHub
+    - name: List MyHub
+      query: query.getHubStatus
+    - name: Sync MyHub
+      query: mutation.syncHub 
+    - name: Delete ChaosWorkflow
+      query: mutation.deleteChaosWorkflow
+
+  - name: User Management
+    description: User Management APIs manages user accessibility with Litmus Portal 
+    usecases:      
+    - name: Add User
+      query: mutation.createUser
+    - name: List User
+      query: query.users
+    - name: Get User
+      query: query.getUser
+    - name: Update User
+      query: muatation.updateUser
+    - name: Send Invitation
+      query: mutation.sendInvitation 
+    - name: Accept Invitation
+      query: mutation.acceptInvitation
+    - name: Decline Invitation
+      query: mutation.declineInvitation
+    - name: Remove Invitation
+      query: mutation.declineInvitation
+
+  - name: Project
+    usecases:      
+    - name: Get Project
+      query: query.getProject
+
